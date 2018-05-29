@@ -275,7 +275,7 @@
       "boshAzureCPIReleaseUrl": "https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-azure-cpi-release?v=35.2.0",
       "boshAzureCPIReleaseSha1": "d581c4181d31846e05e59054a15e09621f1e90b1",
       "stemcellUrl": "https://bosh.io/d/stemcells/bosh-azure-hyperv-ubuntu-trusty-go_agent?v=3586.8",
-      "stemcellSha1": "91f7f5b4ebf69fae1fc390ea981af7cbae765a3e"
+      "stemcellSha1": ""
     },
     "environmentAzureCloud": "[variables('environmentAzure')]",
     "environmentAzureUSGovernment": "[variables('environmentAzure')]",
@@ -287,7 +287,7 @@
       "boshAzureCPIReleaseUrl": "https://mirror.azure.cn/bosh/bosh-azure-cpi-release/bosh-azure-cpi-release-35.2.0.tgz",
       "boshAzureCPIReleaseSha1": "d581c4181d31846e05e59054a15e09621f1e90b1",
       "stemcellUrl": "https://mirror.azure.cn/bosh/bosh-azure-stemcells/bosh-stemcell-3586.8-azure-hyperv-ubuntu-trusty-go_agent.tgz",
-      "stemcellSha1": "91f7f5b4ebf69fae1fc390ea981af7cbae765a3e"
+      "stemcellSha1": ""
     },
     "environment": "[variables(concat('environment', parameters('environment')))]",
     "credentialsPassword": "[base64(parameters('clientSecret'))]",
