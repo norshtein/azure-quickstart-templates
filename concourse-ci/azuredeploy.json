@@ -130,11 +130,6 @@
     "baseUriAzureCloud": "[parameters('_artifactsLocation')]",
     "filesToDownloadAzureCloud": [
       "[uri(variables('baseUriAzureCloud'), 'scripts/setup_env')]",
-      "[uri(variables('baseUriAzureCloud'), 'scripts/setup_env.py')]",
-      "[uri(variables('baseUriAzureCloud'), 'scripts/create_cert.sh')]",
-      "[uri(variables('baseUriAzureCloud'), 'scripts/init.sh')]",
-      "[uri(variables('baseUriAzureCloud'), 'scripts/deploy_bosh.sh')]",
-      "[uri(variables('baseUriAzureCloud'), 'scripts/deploy_concourse.sh')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/bosh.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/cloud.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/concourse.yml')]",
