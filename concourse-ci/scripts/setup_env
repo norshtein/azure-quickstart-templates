@@ -104,6 +104,7 @@ bosh create-env ~/example_manifests/bosh.yml \\
   -o ~/example_manifests/use-azure-dns.yml \\
   -o ~/example_manifests/jumpbox-user.yml \\
   -o ~/example_manifests/keep-failed-or-unreachable-vms.yml \\
+  -o ~/example_manifests/use-managed-disks.yml \\
   -v director_name=azure \\
   -v internal_cidr=$(get_setting SUBNET_ADDRESS_RANGE_FOR_BOSH) \\
   -v internal_gw=$(get_setting SUBNET_GATEWAY_FOR_BOSH) \\
