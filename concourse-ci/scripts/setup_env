@@ -39,6 +39,9 @@ function install_bosh_cli() {
   sudo mv ./bosh-cli-* /usr/local/bin/bosh
 }
 
+echo "Installing jq"
+retryop "apt-get update && apt-get install -y jq"
+
 function get_setting() {
   key=$1
   local value=$(echo $settings | jq ".$key" -r)
@@ -53,9 +56,6 @@ client_secret=$3
 environment=$(get_setting ENVIRONMENT)
 username=$(get_setting ADMIN_USER_NAME)
 home_dir="/home/$username"
-
-echo "Installing jq"
-retryop "apt-get update && apt-get install -y jq"
 
 # https://bosh.io/docs/cli-v2-install/#additional-dependencies
 echo "Installing OS specified dependencies for bosh create-env command"
