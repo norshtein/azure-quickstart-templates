@@ -120,7 +120,7 @@ bosh create-env ~/example_manifests/bosh.yml \\
   -v subscription_id=$(get_setting SUBSCRIPTION_ID) \\
   -v tenant_id=${tenant_id} \\
   -v client_id=${client_id} \\
-  -c client_secret=${client_secret} \\
+  -v client_secret=${client_secret} \\
 EOF
 chmod +x deploy_bosh.sh
 cp deploy_bosh.sh $home_dir
@@ -148,6 +148,13 @@ bosh upload-stemcell --sha1=$(get_setting STEMCELL_SHA1) $(get_setting STEMCELL_
 bosh -e azure -n deploy -d concourse concourse.yml \\
   -l ~/example_manifests/versions.yml \\
   --vars-store=~/concourse-deployment-vars.yml \\
+  -v deployment_name=concourse \\
+  -v network_name= \\
+  -v web_vm_type= \\
+  -v db_vm_type= \\
+  -v db_persisitent_disk_type= \\
+  -v worker_vm_type= \\
+  -v external_url= \\
 
 EOF
 chmod +x deploy_concourse.sh

@@ -158,6 +158,7 @@
       "[uri(variables('baseUriAzureCloud'), 'manifests/custom-cpi-release.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/custom-environment.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/use-azure-dns.yml')]",
+      "[uri(variables('baseUriAzureCloud'), 'manifests/use-managed-disks.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/jumpbox-user.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/keep-failed-or-unreachable-vms.yml')]"
     ],
