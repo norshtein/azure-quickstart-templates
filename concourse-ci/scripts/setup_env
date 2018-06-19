@@ -149,10 +149,10 @@ bosh -e azure -n deploy -d concourse ~/example_manifests/concourse.yml \\
   -l ~/example_manifests/versions.yml \\
   --vars-store=~/concourse-deployment-vars.yml \\
   -v deployment_name=concourse \\
-  -v network_name=$(get_setting SUBNET_NAME_FOR_CONCOURSE) \\
+  -v network_name=concourse \\
   -v web_vm_type=concourse_web_or_db \\
   -v db_vm_type=concourse_web_or_db \\
-  -v db_persisitent_disk_type=default \\
+  -v db_persistent_disk_type=default \\
   -v worker_vm_type=concourse_worker \\
   -v basic_auth_username=$(get_setting CONCOURSE_USERNAME) \\
   -v basic_auth_password=$(get_setting CONCOURSE_PASSWORD) \\

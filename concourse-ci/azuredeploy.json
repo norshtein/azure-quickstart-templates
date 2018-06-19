@@ -180,8 +180,8 @@
       "serviceHostBase": "core.windows.net",
       "boshAzureCPIReleaseUrl": "https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-azure-cpi-release?v=35.2.0",
       "boshAzureCPIReleaseSha1": "d581c4181d31846e05e59054a15e09621f1e90b1",
-      "stemcellUrl": "https://bosh.io/d/stemcells/bosh-azure-hyperv-ubuntu-trusty-go_agent?v=3586.8",
-      "stemcellSha1": "91f7f5b4ebf69fae1fc390ea981af7cbae765a3e",
+      "stemcellUrl": "https://s3.amazonaws.com/bosh-core-stemcells/azure/bosh-stemcell-3586.24-azure-hyperv-ubuntu-trusty-go_agent.tgz",
+      "stemcellSha1": "ddafd98aad041bc2a92fae0168ab98f2adec331e",
       "boshCLIUrl": "https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-3.0.1-linux-amd64",
       "concourseReleaseUrl": "https://github.com/concourse/concourse/releases/download/v2.6.0/concourse-2.6.0.tgz",
       "gardenReleaseUrl": "https://github.com/concourse/concourse/releases/download/v2.6.0/garden-runc-1.0.4.tgz"
