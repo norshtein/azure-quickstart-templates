@@ -165,6 +165,8 @@
       "[uri(variables('baseUriAzureCloud'), 'manifests/bosh.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/cloud.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/concourse.yml')]",
+      "[uri(variables('baseUriAzureCloud'), 'manifests/versions.yml')]",
+      "[uri(variables('baseUriAzureCloud'), 'manifests/static-web.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/cpi.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/custom-cpi-release.yml')]",
       "[uri(variables('baseUriAzureCloud'), 'manifests/custom-environment.yml')]",
