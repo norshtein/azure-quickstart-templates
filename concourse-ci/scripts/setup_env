@@ -147,6 +147,7 @@ bosh -n update-cloud-config ~/example_manifests/cloud.yml \\
 bosh upload-stemcell --sha1=$(get_setting STEMCELL_SHA1) $(get_setting STEMCELL_URL)
 bosh -e azure -n deploy -d concourse concourse.yml \\
   -l ~/example_manifests/versions.yml \\
+  -o ~/example_manifests/static-web.yml \\
   --vars-store=~/concourse-deployment-vars.yml \\
   -v deployment_name=concourse \\
   -v network_name=$(get_setting SUBNET_NAME_FOR_CONCOURSE) \\
@@ -154,6 +155,9 @@ bosh -e azure -n deploy -d concourse concourse.yml \\
   -v db_vm_type=concourse_web_or_db \\
   -v db_persisitent_disk_type=default \\
   -v worker_vm_type=concourse_worker \\
+  -v basic_auth_username=$(get_setting CONCOURSE_USERNAME) \\
+  -v basic_auth_password=$(get_setting CONCOURSE_PASSWORD) \\
+  -v web_ip=$(get_setting CONCOURSE_PUBLIC_IP) \\
   -v external_url="http://$(get_setting CONCOURSE_PUBLIC_IP):8080" \\
 
 EOF
@@ -184,3 +188,14 @@ fi
 echo "Start to run deploy_bosh.sh..."
 su -c "./deploy_bosh.sh" - $username
 echo "Finish"
+
+auto_deploy_concourse=$(get_setting AUTO_DEPLOY_CONCOURSE)
+if [ "$auto_deploy_concourse" != "enabled" ]; then
+  echo "Finish"
+  exit 0
+fi
+
+echo "Start to run deploy_concourse.sh..."
+su -c "./deploy_concourse.sh" - $username
+echo "Finish"
+
