@@ -147,7 +147,6 @@ bosh -n update-cloud-config ~/example_manifests/cloud.yml \\
 bosh upload-stemcell --sha1=$(get_setting STEMCELL_SHA1) $(get_setting STEMCELL_URL)
 bosh -e azure -n deploy -d concourse concourse.yml \\
   -l ~/example_manifests/versions.yml \\
-  -o ~/example_manifests/static-web.yml \\
   --vars-store=~/concourse-deployment-vars.yml \\
   -v deployment_name=concourse \\
   -v network_name=$(get_setting SUBNET_NAME_FOR_CONCOURSE) \\
