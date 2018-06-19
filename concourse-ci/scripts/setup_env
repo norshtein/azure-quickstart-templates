@@ -145,7 +145,7 @@ bosh -n update-cloud-config ~/example_manifests/cloud.yml \\
   -v ephemeral_disk_size=${concourse_worker_disk_size_in_mb} \\
 
 bosh upload-stemcell --sha1=$(get_setting STEMCELL_SHA1) $(get_setting STEMCELL_URL)
-bosh -e azure -n deploy -d concourse concourse.yml \\
+bosh -e azure -n deploy -d concourse ~/example_manifests/concourse.yml \\
   -l ~/example_manifests/versions.yml \\
   --vars-store=~/concourse-deployment-vars.yml \\
   -v deployment_name=concourse \\
